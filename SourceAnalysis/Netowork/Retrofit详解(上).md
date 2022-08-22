@@ -370,9 +370,9 @@ Call<User> getUser(@Header("Authorization") String authorization)
 -keepattributes Exceptions
 ```
 
-[1]: https://github.com/CharonChui/AndroidNote/blob/master/SourceAnalysis/Netowork/volley-retrofit-okhttp%E4%B9%8B%E6%88%91%E4%BB%AC%E8%AF%A5%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E7%BD%91%E8%B7%AF%E6%A1%86%E6%9E%B6.md  "volley-retrofit-okhttp之我们该如何选择网路框架"
-[2]: https://github.com/CharonChui/AndroidNote/blob/master/SourceAnalysis/Netowork/Volley%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90.md "Volley源码分析"
-[3]: https://github.com/CharonChui/AndroidNote/blob/master/AdavancedPart/%E6%B3%A8%E8%A7%A3%E4%BD%BF%E7%94%A8.md "注解使用"
+[1]: ./SourceAnalysis/Netowork/volley-retrofit-okhttp%E4%B9%8B%E6%88%91%E4%BB%AC%E8%AF%A5%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E7%BD%91%E8%B7%AF%E6%A1%86%E6%9E%B6.md  "volley-retrofit-okhttp之我们该如何选择网路框架"
+[2]: ./SourceAnalysis/Netowork/Volley%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90.md "Volley源码分析"
+[3]: ./AdavancedPart/%E6%B3%A8%E8%A7%A3%E4%BD%BF%E7%94%A8.md "注解使用"
 [4]: https://github.com/CharonChui/AndroidNote/tree/master/RxJavaPart "Rx详解系列"
 
 

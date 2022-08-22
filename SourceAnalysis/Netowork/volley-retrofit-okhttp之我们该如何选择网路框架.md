@@ -43,8 +43,8 @@ volley-retrofit-okhttp之我们该如何选择网路框架
 所以综合起来说使用`Volley+OKHttp`的组合是非常不错的，既可以保证速度又可以满足对缓存、重试等的处理。但是如果你是`RxJava`的使用者那你可能会更偏向于使用`Retrofit`，因为`Retrofit`可以无缝结合`RxJava`使用。目前主流的一套框架就是`Retrofit + OkHttp + RxJava + Dagger2 `，但是对使用者的要求也相对要高些。
 
 
-[1]: https://github.com/CharonChui/AndroidNote/blob/master/SourceAnalysis/Netowork/HttpURLConnection%E8%AF%A6%E8%A7%A3.md "HttpUrlConnection详解"
-[2]: https://github.com/CharonChui/AndroidNote/blob/master/SourceAnalysis/Netowork/Volley%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90.md "Volley源码分析"
+[1]: ./SourceAnalysis/Netowork/HttpURLConnection%E8%AF%A6%E8%A7%A3.md "HttpUrlConnection详解"
+[2]: ./SourceAnalysis/Netowork/Volley%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90.md "Volley源码分析"
 		
 ---
 

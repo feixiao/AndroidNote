@@ -132,7 +132,7 @@ void Java_com_charon_uninstallfeedback_MainActivity_initUninstallFeedback(
 有关如何在[Android Stuido中进行ndk开发请看][1]。
    		
 
-[1]: https://github.com/CharonChui/AndroidNote/blob/master/AndroidStudioCourse/AndroidStudio%E4%B8%AD%E8%BF%9B%E8%A1%8Cndk%E5%BC%80%E5%8F%91.md "Android Stuido中进行ndk开发"
+[1]: ./AndroidStudioCourse/AndroidStudio%E4%B8%AD%E8%BF%9B%E8%A1%8Cndk%E5%BC%80%E5%8F%91.md "Android Stuido中进行ndk开发"
 
 ---
 

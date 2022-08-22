@@ -21,7 +21,7 @@ MAT内存分析
 自从良心企业发布了`leakCanary`后，都已经转投到大神门下。
 
 
-[1]: https://github.com/CharonChui/AndroidNote/blob/master/BasicKnowledge/%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F.md "内存泄露介绍"		
+[1]: ./BasicKnowledge/%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F.md "内存泄露介绍"		
  
 ---
 

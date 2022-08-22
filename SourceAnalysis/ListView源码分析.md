@@ -969,7 +969,7 @@ private View fillSpecific(int position, int top) {
 
 一个个的来，先看一下手势滑动部分，这个当然是从`onTouchEvent()`方法看了，         
 手势这一块不太清楚的可以看我之前的一篇文章
-[Android Touch事件分发详解](https://github.com/CharonChui/AndroidNote/blob/master/SourceAnalysis/Android%20Touch%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E8%AF%A6%E8%A7%A3.md)
+[Android Touch事件分发详解](./SourceAnalysis/Android%20Touch%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E8%AF%A6%E8%A7%A3.md)
 
 
 发现`ListView`没有重写`onTouchEvent()`方法，这也好理解，因为`GridView`也有类似的滑动功能，所以去父类`AbsListView`中看.      

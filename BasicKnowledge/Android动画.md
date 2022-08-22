@@ -378,7 +378,7 @@ void exitReveal() {
 
 ```
 
-有关如何提高动画性能请看:[通过Hardware Layer提高动画性能](https://github.com/CharonChui/AndroidNote/blob/master/Android%E5%8A%A0%E5%BC%BA/%E9%80%9A%E8%BF%87Hardware%20Layer%E6%8F%90%E9%AB%98%E5%8A%A8%E7%94%BB%E6%80%A7%E8%83%BD.md)
+有关如何提高动画性能请看:[通过Hardware Layer提高动画性能](./Android%E5%8A%A0%E5%BC%BA/%E9%80%9A%E8%BF%87Hardware%20Layer%E6%8F%90%E9%AB%98%E5%8A%A8%E7%94%BB%E6%80%A7%E8%83%BD.md)
 
 ---
 

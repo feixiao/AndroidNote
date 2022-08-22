@@ -591,7 +591,7 @@ public void getTask(@NonNull final String taskId, @NonNull final GetTaskCallback
 
 
 
-[1]: https://github.com/CharonChui/AndroidNote/blob/master/JavaKnowledge/MVC%E4%B8%8EMVP%E5%8F%8AMVVM.md  "MVC、MVP、MVVM介绍"
+[1]: ./JavaKnowledge/MVC%E4%B8%8EMVP%E5%8F%8AMVVM.md  "MVC、MVP、MVVM介绍"
 
 ---
 

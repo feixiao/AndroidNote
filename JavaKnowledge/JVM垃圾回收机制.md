@@ -1,6 +1,6 @@
 # JVM垃圾回收机制
 
-[Java内存模型](https://github.com/CharonChui/AndroidNote/blob/master/JavaKnowledge/Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.md)如下图所示，**堆和方法区是所有线程共有的**，而虚拟机栈，本地方法栈和程序计数器则是线程私有的。
+[Java内存模型](./JavaKnowledge/Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.md)如下图所示，**堆和方法区是所有线程共有的**，而虚拟机栈，本地方法栈和程序计数器则是线程私有的。
 
 ![Image](https://raw.githubusercontent.com/CharonChui/Pictures/master/jvm.png)
 

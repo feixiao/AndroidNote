@@ -148,7 +148,7 @@ Hotspot虚拟机的对象头包括两部分信息，第一部分用于存储对�
 
 然后，对于每个已加载的.class文件，它都会按照java.lang包中的定义，恰好创建一个Class对象来表示堆内存中的文件。稍后，在我们的代码中，可以使用此Class对象读取类级别的信息（类名称，父名称，方法，变量信息，静态变量等）。
 
-[具体可参考Java内存模型](https://github.com/CharonChui/AndroidNote/blob/master/JavaKnowledge/Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.md)
+[具体可参考Java内存模型](./JavaKnowledge/Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.md)
 
 
 
@@ -195,7 +195,7 @@ Hotspot虚拟机的对象头包括两部分信息，第一部分用于存储对�
 
 ### Garbage Collector (GC)
 
-只要引用了一个对象，JVM就会认为它是活动的。一旦不再引用对象，因此应用程序代码无法访问该对象，则垃圾收集器将其删除并回收未使用的内存。通常，垃圾回收是在后台进行的，但是我们可以通过调用System.gc()方法来触发垃圾回收（同样，无法保证执行。因此，请调用Thread.sleep（1000）并等待GC完成）。[具体内存回收部分请看JVM垃圾回收机制](https://github.com/CharonChui/AndroidNote/blob/master/JavaKnowledge/JVM%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6.md)
+只要引用了一个对象，JVM就会认为它是活动的。一旦不再引用对象，因此应用程序代码无法访问该对象，则垃圾收集器将其删除并回收未使用的内存。通常，垃圾回收是在后台进行的，但是我们可以通过调用System.gc()方法来触发垃圾回收（同样，无法保证执行。因此，请调用Thread.sleep（1000）并等待GC完成）。[具体内存回收部分请看JVM垃圾回收机制](./JavaKnowledge/JVM%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6.md)
 
 
 

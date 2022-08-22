@@ -92,7 +92,7 @@ public @interface ListenerClass {
 作用到注解类型的运行时注解。 
 
 
-有了之前[注解使用](https://github.com/CharonChui/AndroidNote/blob/master/Android%E5%8A%A0%E5%BC%BA/%E6%B3%A8%E8%A7%A3%E4%BD%BF%E7%94%A8.md)这篇文章的基础，我们知道对于编译时注解肯定是要通过自定义`AbstractProcessor`来解析的，所以接下来我们要去`butterknife-compiler module`中找一下对应的类。通过名字我们就能很简单的找到:  
+有了之前[注解使用](./Android%E5%8A%A0%E5%BC%BA/%E6%B3%A8%E8%A7%A3%E4%BD%BF%E7%94%A8.md)这篇文章的基础，我们知道对于编译时注解肯定是要通过自定义`AbstractProcessor`来解析的，所以接下来我们要去`butterknife-compiler module`中找一下对应的类。通过名字我们就能很简单的找到:  
 ```java
 package butterknife.compiler;
 
@@ -582,7 +582,7 @@ public class SimpleActivity_ViewBinding<T extends SimpleActivity> implements Unb
     ```
 
 
-[1]: https://github.com/CharonChui/AndroidNote/blob/master/AdavancedPart/%E6%B3%A8%E8%A7%A3%E4%BD%BF%E7%94%A8.md "注解使用"
+[1]: ./AdavancedPart/%E6%B3%A8%E8%A7%A3%E4%BD%BF%E7%94%A8.md "注解使用"
 
 
 

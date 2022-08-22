@@ -284,7 +284,7 @@ Monitor其实是一种同步工具，也可以说是一种同步机制，它通�
 参考:  
 
 - [再有人问你Java内存模型是什么，就把这篇文章发给他](https://www.hollischuang.com/archives/2550)
-- [原子性、可见性以及有序性](https://github.com/CharonChui/AndroidNote/blob/master/JavaKnowledge/%E5%8E%9F%E5%AD%90%E6%80%A7%E3%80%81%E5%8F%AF%E8%A7%81%E6%80%A7%E4%BB%A5%E5%8F%8A%E6%9C%89%E5%BA%8F%E6%80%A7.md)
+- [原子性、可见性以及有序性](./JavaKnowledge/%E5%8E%9F%E5%AD%90%E6%80%A7%E3%80%81%E5%8F%AF%E8%A7%81%E6%80%A7%E4%BB%A5%E5%8F%8A%E6%9C%89%E5%BA%8F%E6%80%A7.md)
 
 
 

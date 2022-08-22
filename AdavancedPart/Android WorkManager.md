@@ -156,7 +156,7 @@ public final class PeriodicWorkRequest extends WorkRequest {
 
 
 到了这里突然有了一个大胆的想法。看到没有它能保证任务的执行。
-我们之前写过一篇文章[Android卸载反馈](https://github.com/CharonChui/AndroidNote/blob/master/AdavancedPart/Android%E5%8D%B8%E8%BD%BD%E5%8F%8D%E9%A6%88.md)
+我们之前写过一篇文章[Android卸载反馈](./AdavancedPart/Android%E5%8D%B8%E8%BD%BD%E5%8F%8D%E9%A6%88.md)
 里面用到了`c`中的`fork`来保证存活，达到常驻内存的功能，如果`PeriodicWorkRequest`的最小间隔时间比较短不是15分钟的话，那这里是不是也可以用`WorkManager`来实现？ 好了，不说了。
 
 

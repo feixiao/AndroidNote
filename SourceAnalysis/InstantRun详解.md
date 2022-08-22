@@ -180,7 +180,7 @@ InstantRun详解
 - [Instant Run: How Does it Work?!](https://medium.com/google-developers/instant-run-how-does-it-work-294a1633367f#.8xmpk8xvc)
     	
 
-[1]: https://github.com/CharonChui/AndroidNote/blob/master/AndroidStudioCourse/AndroidStudio%E6%8F%90%E9%AB%98Build%E9%80%9F%E5%BA%A6.md "AndroidStudio提高Build速度"
+[1]: ./AndroidStudioCourse/AndroidStudio%E6%8F%90%E9%AB%98Build%E9%80%9F%E5%BA%A6.md "AndroidStudio提高Build速度"
 
 ---
 
