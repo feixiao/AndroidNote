@@ -124,7 +124,7 @@
         - [12.Navigation简介][304]
         - [13.Jetpack MVVM简介][305]
         - [14.findViewById的过去及未来][306]
-    - [ui][290]
+    - [UI][290]
         - [Jetpack Compose简介][307]
         - [material][308]
             - [1.MaterialToolbar简介][309]
@@ -650,7 +650,7 @@
 [305]: ./Jetpack/architecture/13.Jetpack%20MVVM%E7%AE%80%E4%BB%8B.md "13.Jetpack MVVM简介"
 [306]: ./Jetpack/architecture/14.findViewById%E7%9A%84%E8%BF%87%E5%8E%BB%E5%8F%8A%E6%9C%AA%E6%9D%A5.md "14.findViewById的过去及未来"
 [307]: ./Jetpack/ui/Jetpack%20Compose%E7%AE%80%E4%BB%8B.md "Jetpack Compose简介"
-[308]: https://github.com/CharonChui/AndroidNote/tree/master/Jetpack/ui/material "material"
+[308]: ./Jetpack/ui/material "material"
 [309]: ./Jetpack/ui/material/1.MaterialToolbar%E7%AE%80%E4%BB%8B.md "1.MaterialToolbar简介"
 [310]: ./Jetpack/ui/material/2.NavigationView%E7%AE%80%E4%BB%8B.md "2.NavigationView简介"
 [311]: ./Jetpack/ui/material/3.NestedScrollView%E7%AE%80%E4%BB%8B.md "3.NestedScrollView简介"
