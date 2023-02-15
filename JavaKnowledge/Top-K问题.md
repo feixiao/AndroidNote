@@ -394,8 +394,3 @@ public class BFPRT {
     }
 }
 ```
-
-
-----
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 

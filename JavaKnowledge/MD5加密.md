@@ -34,7 +34,3 @@ public class MD5Utils {
     }
 }
 ```
-
-----
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 

@@ -417,10 +417,3 @@ NUMA 是一种多核服务器的架构，简单来讲，一个多核服务器（
 参考: 
 
 - [一文看懂 JVM 内存布局及 GC 原理](https://www.infoq.cn/article/3WyReTKqrHIvtw4frmr3)
-
-
-
----
-
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 

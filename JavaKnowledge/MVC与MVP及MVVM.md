@@ -78,9 +78,4 @@ MVVM模式将Presener改名为View Model，基本上与MVP模式完全一致，�
 - 可重用性。
 - 独立开发。
 - 可测试。
-
----
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 
-
 	

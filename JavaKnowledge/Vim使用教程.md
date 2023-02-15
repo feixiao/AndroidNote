@@ -105,16 +105,4 @@ Vim使用教程
 - `:saveas <pat>` 另存为
 - `:e filename` 打开文件
 - `:sav filename` 保存为某文件名
-
-
-
-
-
-
-
-		
----
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 
-
 	
