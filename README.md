@@ -227,30 +227,30 @@
     - [OOM问题分析][215]
 
 - [Java基础及算法][53]
-	- [八种排序算法][189]
-    - [算法复杂度][192]
-	- [线程池的原理][190]
-	- [设计模式][191]
-    - [动态代理][193]
-    - [常用命令行大全][85]
-    - [单例的最佳实现方式][86]
-    - [数据结构][87]
-    - [获取今后多少天后的日期][88]
-    - [剑指Offer(上)][89]
-    - [剑指Offer(下)][90]
-    - [强引用、软引用、弱引用、虚引用][91]
-    - [生产者消费者][92]
-    - [数据加密及解密][93]
-    - [死锁][94]
-    - [常见算法][95]
-    - [网络请求相关内容总结][96]
-    - [线程池的原理][97]
-    - [Java并发编程之原子性、可见性以及有序性][98]
-    - [Base64加密][99]
-    - [Git简介][100]
-    - [hashCode与equals][101]
-    - [HashMap实现原理分析][102]
-    - [Java基础面试题][103]
+	- [x] [八种排序算法][189]
+    - [x] [算法复杂度][192]
+	- [x] [线程池的原理][190]
+	- [x] [设计模式][191]
+    - [x] [动态代理][193]
+    - [x] [常用命令行大全][85]
+    - [x] [单例的最佳实现方式][86]
+    - [x] [数据结构][87]
+    - [x] [获取今后多少天后的日期][88]
+    - [x] [剑指Offer(上)][89]
+    - [x] [剑指Offer(下)][90]
+    - [x] [强引用、软引用、弱引用、虚引用][91]
+    - [x] [生产者消费者][92]
+    - [x] [数据加密及解密][93]
+    - [x] [死锁][94]
+    - [x] [常见算法][95]
+    - [x] [网络请求相关内容总结][96]
+    - [x] [线程池的原理][97]
+    - [x] [Java并发编程之原子性、可见性以及有序性][98]
+    - [x] [Base64加密][99]
+    - [x] [Git简介][100]
+    - [x] [hashCode与equals][101]
+    - [x] [HashMap实现原理分析][102]
+    - [x] [Java基础面试题][103]
     - [JVM垃圾回收机制][104]
     - [MD5加密][105]
     - [MVC与MVP及MVVM][106]
@@ -667,27 +667,3 @@
 
 - [史上最适合Android开发者学习的Go语言教程](https://github.com/CharonChui/GolangStudyNote)
 - [史上最适合Android开发者学习的iOS开发教程](https://github.com/CharonChui/iOSStudyNote)
-
-
-Developed By
-===
-
- * Charon Chui - <charon.chui@gmail.com>
-
-
-License
-===
-
-    Copyright (C) 2013 Charon Chui <charon.chui@gmail.com>
-    
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-    
-       http://www.apache.org/licenses/LICENSE-2.0
-    
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.

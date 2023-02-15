@@ -18,8 +18,4 @@ hashCode与equals
 上面说的对象相同指的是用`eqauls`方法比较。    
 你当然可以不按要求去做了，但你会发现，相同的对象可以出现在`Set`集合中。同时，增加新元素的效率会大大下降。
 
----
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 
-
 	

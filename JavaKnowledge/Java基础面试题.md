@@ -1690,7 +1690,3 @@ Java基础面试题
 		}
 	}
 	```
-
-----
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 

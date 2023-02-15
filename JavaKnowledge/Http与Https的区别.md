@@ -176,18 +176,4 @@ HTTP + 加密 + 认证 + 完整性保护 = HTTPS
 
     方案4.web socket 和传统的tcp socket相似，基于tcp协议，提供双向的数据通道。它的优势是提供了message的概念，比基于字节流的tcp socket使用更简单。技术较新，不是所有浏览器都提供了支持。
 
-
-
-
-
-
-
-
-
-
-
-----
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 
-
 	
