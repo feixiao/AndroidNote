@@ -106,9 +106,9 @@
 
 
 - [Gradle&Maven][49]
-    - [Gradle专题][39]
-    - [发布library到Maven仓库][40]
-    - [Composing builds简介][319]
+    - [x] [Gradle专题][39]
+    - [x] [发布library到Maven仓库][40]
+    - [x] [Composing builds简介][319]
 
 - [应用发布][50]
     - [使用Jenkins实现自动化打包][198]

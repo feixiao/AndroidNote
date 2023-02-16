@@ -362,8 +362,3 @@ dependencies {
 - [Stop using Gradle buildSrc. Use composite builds instead](https://proandroiddev.com/stop-using-gradle-buildsrc-use-composite-builds-instead-3c38ac7a2ab3)
 - [再见吧 buildSrc, 拥抱 Composing builds 提升 Android 编译速度](https://juejin.cn/post/6844904176250519565)
 - [composite_builds](https://docs.gradle.org/current/userguide/composite_builds.html)
-
----
-
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 
