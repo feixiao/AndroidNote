@@ -80,9 +80,32 @@ Android系统启动跟PC相似。当开机时，首先加载BootLoader，BootLoa
 + 应用服务
   通过bindService向AMS发送绑定服务端请求，AMS通过onServiceConnected()回调把服务的binder对象返回给业务端，然后把这个对象封装成业务接口对象给业务接口调用。
 
-5 ServiceManager启动和工作原理是怎样的？
-6 谈谈对AMS的理解
-第2章 应用进程相关面试问题
+#### 5 ServiceManager启动和工作原理是怎样的？
+ServiceManager 是为了完成 Binder Server 的 Name（域名）和 Handle（IP 地址）之间对应关系的查询而存在的，它主要包含的功能：
+
++ 注册：当一个 Binder Server 创建后，应该将这个 Server 的 Name 和 Handle 对应关系记录到 ServiceManager 中
++ 查询：其他应用可以根据 Server 的 Name 查询到对应的 Service Handle
+```shell    
+binder 驱动 -> 路由器
+ServiceManager -> DNS
+Binder Client -> 客户端
+Binder Server -> 服务器
+```
+
++ 参考资料[《ServiceManager 的工作原理》](https://zhuanlan.zhihu.com/p/158623349)
+
+#### 6 谈谈对AMS的理解
+AMS即ActivityManagerService，AMS是Android中最核心的服务，主要负责系统中四大组件的启动、切换、调度及应用进程的管理和调度等工作，其职责与操作系统中的进程管理和调度模块相类似
+![](./imgs/ams_service.jpeg)
+
+  + AMS的main函数：创建AMS实例，其中最重要的工作是创建Android运行环境，得到一个ActivityThread和一个Context对象。
+  + AMS的setSystemProcess函数：该函数注册AMS和meminfo等服务到ServiceManager中。另外，它为SystemServer创建了一个ProcessRecord对象。由于AMS是Java世界的进程管理及调度中心，要做到对Java进程一视同仁，尽管SystemServer贵为系统进程，此时也不得不将其并入AMS的管理范围内。
+  + AMS的installSystemProviders：为SystemServer加载SettingsProvider。
+  + AMS的systemReady：做系统启动完毕前最后一些扫尾工作。该函数调用完毕后，HomeActivity将呈现在用户面前。 
+
++ 参考资料[《AMS在Android起到什么作用?》](https://zhuanlan.zhihu.com/p/86266649)
+  
+### 第2章 应用进程相关面试问题
 
 本章主要讲解应用进程的启动，以及伴随进程启动过程中的一些重要机制的初始化原理，比如binder机制，Application，以及Context等方面的面试问题。
 1 你知道应用进程是怎么启动的吗？
