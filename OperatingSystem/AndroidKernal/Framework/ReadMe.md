@@ -1,19 +1,85 @@
-第1章 系统服务相关面试问题
-
+## Andorid Framework入门
+#### 第1章 系统服务相关面试问题
 本章重点讲解系统核心进程，以及一些关键的系统服务的启动原理和工作原理相关的面试内容。
-1 谈谈对zygote的理解
-    Zygote的作用是什么？
-        对于Zygote的作用实际上可以概括为以下两点：
-    * 创建SystemServer
-    * 孵化应用进程
-    https://zhuanlan.zhihu.com/p/260414370
+##### 1：谈谈对zygote的理解
+Zygote的作用是什么？
+对于Zygote的作用实际上可以概括为以下两点：
++ 创建SystemServer
++ 孵化应用进程
+
+![](./imgs/zygote.jpeg) 
+
++ 参考[谈谈对Android中Zygote的理解](https://zhuanlan.zhihu.com/p/260414370)
  
 
-2 说说Android系统的启动
-3 你知道怎么添加一个系统服务吗？
-    https://blog.csdn.net/menghaocheng/article/details/104316165
-4 系统服务和bind的应用服务有什么区别？
-    https://www.jianshu.com/p/f633fda5acc6
+##### 2: 说说Android系统的启动
+Android是基于Linux系统的。但是它没有BIOS程序，取而代之的是**BootLoader（系统启动加载器）**。类似于BIOS，在系统加载前，用于初始化硬件设备，最终调用系统内核准备好环境。在Android中没有硬盘，而是ROM，类似于硬盘存放操作系统，用户程序等。
+
+ROM跟硬盘一样也会划分为不同的区域，用于放置不同的程序，在Android中主要划分为以下几个区域：
++ /boot: 存放引导程序，包括内核和内存操作程序
++ /system：相当于电脑C盘，存放Android系统和系统应用
++ /recover: 回复分区。可以进入该分区进行系统回复
++ /data: 用户数据区，包含了用户的数据：联系人、短信、设置、用户安装的程序
++ /cache: 安卓系统缓存区，保存系统经常访问的数据和应用程序
++ /misc: 杂项内容
++ /sdcard: 用户自己的存储区域。存放照片视频等
+Android系统启动跟PC相似。当开机时，首先加载BootLoader，BootLoader会读取ROM找到系统并将内核加载进RAM中。
+
+当内核启动后会初始化各种软硬件环境，加载驱动程序，挂载跟文件系统。最后阶段会启动执行第一个用户空间进程init进程。
+![](./imgs/startup.jpg)
+
++  参考资料[《详解Android系统启动过程》](http://www.ay1.cc/article/18368.html)
+
+##### 3 你知道怎么添加一个系统服务吗？
+###### 新增的服务
++ 服务AIDL文件，定义服务的接口：
+    ```shell
+    frameworks/base/core/java/android/app/IDemoManager.aidl
+    ```
++ 服务管理类，提供给客户端调用，以访问服务端的接口 (即持有服务端的引用， Binder 引用)
+    ```shell
+    frameworks/base/core/java/android/app/DemoManager.java
+    ```
++ 服务实现类， 实现AIDL文件
+    ```shell
+    frameworks/base/services/core/java/com/android/server/DemoManagerService.java
+    ```
+
+###### 创建及启动服务涉及的修改
++ 定义服务的标识
+    ```shell
+    frameworks/base/core/java/android/content/Context.java
+    ```
++ 创建及启动服务
+    ```shell
+    frameworks/base/services/java/com/android/server/SystemServer.java
+    ```
++ 创建服务管理类(可同时获取服务端的代理对象，由服务管理对象持有)
+    ```shell
+    frameworks/base/core/java/android/app/SystemServiceRegistry.java
+    ```
++ 参考[《Framework添加新的系统服务》](https://www.jianshu.com/p/74971ee85a8b)
+
+#### 4 系统服务和bind的应用服务有什么区别？
+##### 启动方式
++ 系统服务
+  在SystemServer里面进行分批、分阶段启动，大部分都跑在binder线程里面。
+##### 注册方式
++ 系统服务
+  有系统服务才能注册在ServiceManager
++ 应用服务
+  ![](./imgs/ams.png)
+    + 应用端会向AMS发起bindService。
+    + AMS会先判断这个Service是否已经注册过了，注册过就直接把之前发布的binder返回给应用；如果没有，AMS会像Service请求binder对象。（AMS请求的，属于被动注册）
+    + Service会相应AMS的请求，发布这个binder对象到AMS
+    + AMS再把这个binder对象回调给应用
+
+##### 使用方式
++ 系统服务
+  通过服务名去找到对于的ServiceFetcher对象，然后先通过SM.getService拿到binder对象，然后封装了一层拿到服务的管理对象。
++ 应用服务
+  通过bindService向AMS发送绑定服务端请求，AMS通过onServiceConnected()回调把服务的binder对象返回给业务端，然后把这个对象封装成业务接口对象给业务接口调用。
+
 5 ServiceManager启动和工作原理是怎样的？
 6 谈谈对AMS的理解
 第2章 应用进程相关面试问题
