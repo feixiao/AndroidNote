@@ -123,8 +123,3 @@ The Gradle wrapper
 
 直接上图：   
 ![Image](https://raw.githubusercontent.com/CharonChui/Pictures/master/AndroidStudio_4_1.png?raw=true)	            
-		
----
-
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 

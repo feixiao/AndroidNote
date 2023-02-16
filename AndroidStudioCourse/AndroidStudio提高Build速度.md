@@ -84,8 +84,3 @@ AndroidStudio提高Build速度
     `Instantt Run`放在这里说可能不合适，但是用他确实能大大的减少运行时间。              
     如果还不了解的话可以参考[Instant Run](http://tools.android.com/tech-docs/instant-run)           
     ![image](https://raw.githubusercontent.com/CharonChui/Pictures/master/studio_instantrun.png?raw=true)
-		
----
-
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 

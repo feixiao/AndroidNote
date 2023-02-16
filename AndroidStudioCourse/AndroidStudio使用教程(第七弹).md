@@ -406,9 +406,3 @@ buildTypes {
 最后附上一张`Build`流程图: 
 
 ![Image](https://raw.githubusercontent.com/CharonChui/Pictures/master/build.png?raw=true)	
-
-	
----
-
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 

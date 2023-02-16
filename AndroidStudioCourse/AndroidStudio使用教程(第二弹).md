@@ -56,10 +56,3 @@ AndroidStudio使用教程(第二弹)
     有些人进来之后可能找不到`DDMS`了.      
 	![Image](https://raw.githubusercontent.com/CharonChui/Pictures/master/AndroidStudio_2_7.png?raw=true)	   
 	上图中的三个图标分别为, `AVD Manager`、`SDK Manager`、`DDMS`
-	
-
-		
----
-
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 

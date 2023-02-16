@@ -47,8 +47,3 @@ AndroidStudio使用教程(第三弹)
 	Why not?                         
 	以`Gradle`方式导入， 然后`next`, 然后`next`然后就没有然后了。                     
 	![Image](https://raw.githubusercontent.com/CharonChui/Pictures/master/AndroidStudio_3_12.png?raw=true)	                                     
-		
----
-
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 

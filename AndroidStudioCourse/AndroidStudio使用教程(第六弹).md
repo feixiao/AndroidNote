@@ -37,9 +37,3 @@ Debug
 		![Image](https://github.com/CharonChui/Pictures/blob/master/AndroidStudio_6_8.png?raw=true)                
         进入设置页后选中要删除的`Module`点击左上角的删除图标`-`后点击确定。                                
 		![Image](https://github.com/CharonChui/Pictures/blob/master/AndroidStudio_6_9.png?raw=true)
-		
-        	  	
----
-
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 

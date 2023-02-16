@@ -107,9 +107,3 @@ AndroidStudio使用教程(第一弹)
 |展示书签                                                   | `Shift+F11`                              |  `Command+F3`                                            | 
 |整行代码上下移动                                                   | `Alt+Shift++↑或↓`                              |  `Option+Shift+↑或↓`                                         | 
 |搜索设置操作命令                                                   | `Ctrl+Shift+A`                              |  `Command+Shift+A`                                         |
-
-
----
-
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 

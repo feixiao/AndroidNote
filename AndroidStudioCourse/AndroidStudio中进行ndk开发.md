@@ -83,8 +83,3 @@ AndroidStudio中进行ndk开发
 - 执行Build      
 	然后就可以在`app/build/intermediates/ndk/debug/obj/local`下看到所有架构的`so`了。
     ![image](https://raw.githubusercontent.com/CharonChui/Pictures/master/studio_ndk_build.png?raw=true)    
-	
----
-
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 

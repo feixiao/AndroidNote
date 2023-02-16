@@ -46,9 +46,3 @@ Android Studio你可能不知道的操作
 `Command+shift+A`然后输入`structural `后选择`search structurally`或者`replace structurally`，然后可以对应的结构性搜索的模板，完成之后所有符合该模板的代码都会提示`warning`。     
 ![image](https://raw.githubusercontent.com/CharonChui/Pictures/master/structural_search.gif?raw=true)        
 更有用的是可以使用快速修复来替换一些代码，例如一些废弃的代码或者你在`review`时发现的其他团队成员提交的一些普遍的错误。
-
-    	
----
-
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 
