@@ -81,9 +81,3 @@ buildTypes {
 注意:为了兼容性，如果你在`build.gradle`文件中没有定义`applicationId` ，那`applicationId`就是与`AndroidManifest.xml`中配置的包名相同的默认值。在这种情况下，这两者显然脱不了干系，如果你试图重构代码中的包就将会导致同时会改变你应用程序的`id`！在`Android Studio`中新创建的项目都是同时指定他们俩。     
 
 注意2:`package name`必须在默认的`AndroidManifest.xml`文件中指定。如果有多个`manifest`文件(例如对每个`flavor`制定一个`manifest`或者每个`build type`制定一个`manifest`)时，`package name`是可选的，但是如果你指定的话，它必须与主`manifest`中指定的`pakcage`相同。
-
-		
----
-
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 

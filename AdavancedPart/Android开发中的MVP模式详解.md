@@ -592,9 +592,3 @@ public void getTask(@NonNull final String taskId, @NonNull final GetTaskCallback
 
 
 [1]: ./JavaKnowledge/MVC%E4%B8%8EMVP%E5%8F%8AMVVM.md  "MVC、MVP、MVVM介绍"
-
----
-
-
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 

@@ -166,8 +166,3 @@ public final class PeriodicWorkRequest extends WorkRequest {
 - [官方文档](https://developer.android.com/topic/libraries/architecture/workmanager)
 - [Codelabs android-workmanager](https://codelabs.developers.google.com/codelabs/android-workmanager/#0)
 - [示例代码](https://github.com/googlecodelabs/android-workmanager)
-		
----
-
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 

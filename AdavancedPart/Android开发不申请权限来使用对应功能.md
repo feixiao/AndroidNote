@@ -48,9 +48,3 @@ startActivityForResult(intent, 1);
 
 
 - (译)[感谢Dan Lew](http://blog.danlew.net/2014/11/26/i-dont-need-your-permission/)
-
-		
----
-
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 

@@ -37,9 +37,3 @@ Android启动模式详解
     - `singleTask`所在的`task`中能有其它的`Activity`，而`singleInstance`的`task`中不能有其他`Activity`。     
     - 当跳转到`singleTask`类型的`Activity`，并且该`Activity`实例已经存在时，会删除该`Activity`所在`task`中位于该`Activity`之上的全部`Activity`实例；而跳转到`singleInstance`类型的`Activity`，并且该`Activity`已经存在时，
 	不需要删除其他`Activity`，因为它所在的`task`只有该`Activity`唯一一个`Activity`实例。
-
-    
----
-
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 

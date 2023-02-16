@@ -595,9 +595,3 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 }
 
 ```
-
-		
----
-
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 
