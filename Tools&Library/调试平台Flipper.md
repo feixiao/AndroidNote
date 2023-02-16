@@ -1,8 +1,4 @@
-调试平台Flipper
-
-===
-
-子日:工欲善其事必先利其器
+### 调试平台Flipper
 
 [Flipper](https://fbflipper.com/docs)是之前`Facebook`的一个内部调试工具，旨在帮助开发人员以交互式和可扩展的方式检查和理解`iOS`及`Android`应用程序的结构和行为。
 
@@ -179,11 +175,3 @@ public class MySonarPlugin implements SonarPlugin {
   }
 }
 ```
-
-
-
----
-
-- 邮箱 ：charon.chui@gmail.com  
--
-Good Luck! 

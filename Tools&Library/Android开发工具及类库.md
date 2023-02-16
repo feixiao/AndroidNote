@@ -78,9 +78,3 @@ Android开发工具及类库
     放到这里可能不太合适，因为它并不是工具和类库，而是`Google`官方发布的`Android`架构示例。非常值得参考。  
 13. [AndroidWiFiADB](https://github.com/pedrovgs/AndroidWiFiADB)
     还在为数据线不够用而烦恼嘛?
-    
-
----
-
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 
