@@ -236,7 +236,6 @@
     - [Android入门介绍][156]
     - [Android四大组件之ContentProvider][157]
     - [Android四大组件之Service][158]
-    - [Ant打包][159]
     - [Bitmap优化][160]
     - [Fragment专题][161]
     - [Home键监听][162]
@@ -493,7 +492,6 @@
 [156]: ./BasicKnowledge/Android%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D.md   "Android入门介绍"
 [157]: ./BasicKnowledge/Android%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8BContentProvider.md   "Android四大组件之ContentProvider"
 [158]: ./BasicKnowledge/Android%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8BService.md   "Android四大组件之Service"
-[159]: ./BasicKnowledge/Ant%E6%89%93%E5%8C%85.md   "Ant打包"
 [160]: ./BasicKnowledge/Bitmap%E4%BC%98%E5%8C%96.md   "Bitmap优化"
 [161]: ./BasicKnowledge/Fragment%E4%B8%93%E9%A2%98.md   "Fragment专题"
 [162]: ./BasicKnowledge/Home%E9%94%AE%E7%9B%91%E5%90%AC.md   "Home键监听"

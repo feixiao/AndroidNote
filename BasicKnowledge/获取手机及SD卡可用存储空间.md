@@ -20,8 +20,3 @@ Formatter类的formatFileSize内部能自动将一个比特大小的值转换成
 static String formatFileSize(Context context, long number)
 Formats a content size to be in the form of bytes, kilobytes, megabytes, etc
 ```
-
----
-
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 

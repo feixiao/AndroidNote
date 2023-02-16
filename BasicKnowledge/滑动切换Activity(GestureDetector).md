@@ -129,10 +129,3 @@
 			overridePendingTransition(R.anim.tran_pre_in, R.anim.tran_pre_out);
 		}
 		```
-		
----
-
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 
- 
- 

@@ -122,8 +122,3 @@
     } 
     //上面的方法都是得到的多少比特的大小，在使用中可以使用Formatter.formatFileSize(Context context, long b)将其自动转成K,M,G等
     ```
-    
----
-
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 

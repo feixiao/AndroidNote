@@ -283,7 +283,3 @@ public class HorizontialListView extends AdapterView<ListAdapter> {
     };
 }
 ```
----
-
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 

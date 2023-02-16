@@ -84,8 +84,3 @@ public void zouni(View view) {
 } 
 ```
 一旦程序有了管理员权限程序就不能卸载了，要想卸载必须在手机上取消该程序的超级管理员，以后如果要防止程序的卸载可以通过这种超级管理员的方式。
-
----
-
-- 邮箱 ：charon.chui@gmail.com  
-- Good Luck! 
