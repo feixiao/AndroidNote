@@ -1,5 +1,6 @@
 ## Andorid Framework入门
-#### 第1章 系统服务相关面试问题
+
+#### 第1章 系统服务相关问题
 本章重点讲解系统核心进程，以及一些关键的系统服务的启动原理和工作原理相关的面试内容。
 ##### 1：谈谈对zygote的理解
 Zygote的作用是什么？
@@ -105,18 +106,40 @@ AMS即ActivityManagerService，AMS是Android中最核心的服务，主要负责
 
 + 参考资料[《AMS在Android起到什么作用?》](https://zhuanlan.zhihu.com/p/86266649)
   
-### 第2章 应用进程相关面试问题
+### 第2章 应用进程相关问题
 
 本章主要讲解应用进程的启动，以及伴随进程启动过程中的一些重要机制的初始化原理，比如binder机制，Application，以及Context等方面的面试问题。
-1 你知道应用进程是怎么启动的吗？
+#### 1 Android应用进程是怎么启动的吗？
+##### 冷启动与热启动
+Activity启动过程中，一般会牵涉到应用启动的流程。应用启动又分为冷启动和热启动。
++ 冷启动：点击桌面图标，手机系统不存在该应用进程，这时系统会重新fork一个子进程来加载Application并启动Activity，这个启动方式就是冷启动。
++ 热启动：应用的热启动比冷启动简单得多，开销也更低。在热启动中，因为系统里已有该应用的进程，所以系统的所有工作就是将您的 Activity 带到前台。 冷启动是应用完全从0开始启动，涉及到更多的内容，所以就应用冷启动的过程展开讨论。
 
-2 应用是怎么启用Binder机制的？
+##### 应用启动流程(冷启动)
+![](./imgs/activy_start.jpeg)
++ 启动进程 
+  + 点击图标发生在Launcher应用的进程，startActivity()函数最终是由Instrumentation通过Android的Binder跨进程通信机制 发送消息给 system_server 进程； 
+  + 在 system_server 中，启动进程的操作由ActivityManagerService 通过 socket 通信告知 Zygote 进程 fork 子进程（app进程）
++ 开启主线程 app 进程启动后，首先是实例化 ActivityThread，并执行其main()函数：创建 ApplicationThread，Looper，Handler 对象，并开启主线程消息循环Looper.loop()。
++ 创建并初始化 Application和Activity ActivityThread的main()调用 ActivityThread#attach(false)方法进行 Binder 通信，通知system_server进程执行 ActivityManagerService#attachApplication(mAppThread)方法，用于初始化Application和Activity。 
+  + 在system_server进程中，ActivityManagerService#attachApplication(mAppThread)里依次初始化了Application和Activity，分别有2个关键函数： 
+    + thread#bindApplication()方法通知主线程Handler 创建 Application 对象、绑定 Context 、执行 Application#onCreate() 生命周期 
+    + mStackSupervisor#attachApplicationLocked()方法中调用 ActivityThread#ApplicationThread#scheduleLaunchActivity()方法，进而通过主线程Handler消息通知创建 Activity 对象，然后再调用 mInstrumentation#callActivityOnCreate()执行 Activity#onCreate() 生命周期
++ 布局&绘制 源码流程可以参考Android View 的绘制流程分析及其源码调用追踪
 
-3 谈谈你对Application的理解
++ 参考资料
+  + [《Android应用启动流程分析》](https://zhuanlan.zhihu.com/p/596546019)
+  + [《Android应用进程的创建 — Activity的启动流程》](https://www.jianshu.com/p/0875116e2e54)
 
-4 谈谈你对Context的理解
-5 冷启动App
-第3章 Activity组件相关面试问题
+#### 2 应用是怎么启用Binder机制的？
+
+
+#### 3 谈谈对Application的理解
+
+#### 4 谈谈对Context的理解
+#### 5 冷启动App
+
+### 第3章 Activity组件相关问题
 
 这一章主要讲解Activity相关的机制，包括Activity的启动流程，显示原理等相关面试问题，通过本章的学习，我们不但能熟悉它，更能深入了解它。
 1 说说Activity的启动流程
