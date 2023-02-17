@@ -177,16 +177,38 @@ Activity、Service和Application这三种类型的Context都是可以通用的
 
 本章主要讲除了Activity之外的应用组件相关问题，包括service的启动和绑定原理，静态广播和动态广播的注册和收发原理，provider的启动和数据传输原理等等。
 ##### 1 说说service的启动原理
+Service的启动方式主要是：startService、bindService。
++ binderService和startService的区别：
+  binderService不会触发应用端的onStartCommand函数。
+###### startService的流程
+流程分为两部分：AMS端、应用端。
++ AMS的流程：
+  + 1). 先看Service启动了没有：如果启动了就直接发指令，让应用端执行onStartCommand()。
+  + 2). 如果Service没有启动，就看它所在进程启动了没有：如果已经启动，就去启动Service，等Service启动了之后再发送指令让其执行onStartCommand。
+  + 3). 如果进程没有启动就去启动进程，等进程启动后再启动Service。
 
-##### 2 说说service的绑定原理-1
++ 应用端的流程:
+  + 1). 先创建Service对象
+  + 2). 再赋予上下文
+  + 3). 最后调用生命周期onCreate()
+![](./imgs/service_start.png)
+###### bindService的流程
++ 用向AMS发起bindService调用。
++ AMS首先检查有没有Service的binder句柄，如果有就直接把它回调给应用。
++ 如果没有，AMS就会向Service请求binder句柄。
++ Service收到之后就会把自己的binder句柄发布到AMS。
++ AMS再把这个binder句柄回调给应用。
++ 应用拿到这个binder句柄后就可以向Service发起binder调用了。
+![](./imgs/service_binder.png)
 
-##### 3 说说service的绑定原理-2
+###### 参考资料 [《Service启动原理》](https://www.cnblogs.com/renhui/p/12964554.html)
+##### 2 说说service的绑定原理
 
-##### 4 说说动态广播的注册和收发原理
+##### 3 说说动态广播的注册和收发原理
 
-##### 5 说说静态广播的注册和收发原理
+##### 4 说说静态广播的注册和收发原理
 
-##### 6 说说Provider的启动原理
+##### 5 说说Provider的启动原理
 
 #### 第5章 UI体系相关问题
 
@@ -207,6 +229,28 @@ Activity、Service和Application这三种类型的Context都是可以通用的
 
 本章主要讲进程通信相关问题，包括binder的整体架构和通信原理，oneway机制，binder对象的传递等等。
 ##### 1 Android Framework用到了哪些跨进程通信方式
+跨进程通信主要有以下几类：管道、Socket、共享内存、信号。
++ 管道
+管道的特点是半双工&单向的，管道里面的数据只能往一个方向流动。一般情况下管道是在父子进程之间使用的。
+
++ socket
+socket的特点是全双工，即可读也可写。可以用在两个无亲缘关系的进程之间，但需要公开路径。
+例子：在Android的Framework机制中，zygote就是通过socket来接受AMS的请求，然后启动应用进程的。
+
++ 共享内存
+共享内存的特点：速度快，且不需要多次拷贝，且进程之间不需要存在亲缘关系，只需要拿到文件描述符即可。
+这里补充一下：管道和socket的问题在于数据不能太大，否则性能会非常糟糕，相比较共享内存不存在这个问题。
+
++ 信号
+信号的特点是：
+  + a).单向的，发送出去后不管其他人接受者是如何处理的；
+  + b).只能带信号，不能带其他参数。
+  + c).知道进程的pid就可以发信号，而且一次可以一群进程发信号（需 root权限 或 同uid 才行）。
+例子：Android的Process#killProcess方法，就是发送的 SIGNAL_KILL 信号。
+
++ Binder 
+Binder机制是Android特有的进程间通信的机制，特点为：采用C/S的通信模式、有更好的传输性能，最重要的特点是安全。
+Android的四大组件，有时候不同的组件之间所在的进程是不一样的，当处于不同的进程的时候，就需要进行进程间通信了。这些进程间的通信依赖于Binder IPC机制。不仅如此，Android 系统对应用层提供的服务如：AMS、PMS等都是基于Binder IPC机制实现的。Binder机制在Android系统中的位置非常重要。
 
 ##### 2 谈谈你对Binder的理解
 
