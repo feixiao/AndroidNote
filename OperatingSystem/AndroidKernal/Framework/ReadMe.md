@@ -106,16 +106,16 @@ AMS即ActivityManagerService，AMS是Android中最核心的服务，主要负责
 
 + 参考资料[《AMS在Android起到什么作用?》](https://zhuanlan.zhihu.com/p/86266649)
   
-### 第2章 应用进程相关问题
+#### 第2章 应用进程相关问题
 
 本章主要讲解应用进程的启动，以及伴随进程启动过程中的一些重要机制的初始化原理，比如binder机制，Application，以及Context等方面的面试问题。
-#### 1 Android应用进程是怎么启动的吗？
-##### 冷启动与热启动
+##### 1 Android应用进程是怎么启动的吗？
+###### 冷启动与热启动
 Activity启动过程中，一般会牵涉到应用启动的流程。应用启动又分为冷启动和热启动。
 + 冷启动：点击桌面图标，手机系统不存在该应用进程，这时系统会重新fork一个子进程来加载Application并启动Activity，这个启动方式就是冷启动。
 + 热启动：应用的热启动比冷启动简单得多，开销也更低。在热启动中，因为系统里已有该应用的进程，所以系统的所有工作就是将您的 Activity 带到前台。 冷启动是应用完全从0开始启动，涉及到更多的内容，所以就应用冷启动的过程展开讨论。
 
-##### 应用启动流程(冷启动)
+###### 应用启动流程(冷启动)
 ![](./imgs/activy_start.jpeg)
 + 启动进程 
   + 点击图标发生在Launcher应用的进程，startActivity()函数最终是由Instrumentation通过Android的Binder跨进程通信机制 发送消息给 system_server 进程； 
@@ -127,14 +127,14 @@ Activity启动过程中，一般会牵涉到应用启动的流程。应用启动
     + mStackSupervisor#attachApplicationLocked()方法中调用 ActivityThread#ApplicationThread#scheduleLaunchActivity()方法，进而通过主线程Handler消息通知创建 Activity 对象，然后再调用 mInstrumentation#callActivityOnCreate()执行 Activity#onCreate() 生命周期
 + 布局&绘制 源码流程可以参考Android View 的绘制流程分析及其源码调用追踪
 
-##### 参考资料
+###### 参考资料
   + [《Android应用启动流程分析》](https://zhuanlan.zhihu.com/p/596546019)
   + [《Android应用进程的创建 — Activity的启动流程》](https://www.jianshu.com/p/0875116e2e54)
 
-#### 2 应用是怎么启用Binder机制的
+##### 2 应用是怎么启用Binder机制的
 
 
-#### 3 谈谈对Application的理解
+##### 3 谈谈对Application的理解
 Application的作用
 + 保存应用进程中的全局变量
   Application会横跨进程的生命周期，我们可以在Application中维护一些全局变量
@@ -143,7 +143,7 @@ Application的作用
 + 提供应用的上下文
   Application可以提供一个稳定的context，而且因为Application的生命周期横跨整个应用的生命周期，所以不需要担心Application的context内存泄漏的问题
   
-#### 4 谈谈对Context的理解
+##### 4 谈谈对Context的理解
 Context的字面含义是上下文环境。应用的上层代码通过Context类提供的接口来操作Android的4大组件和资源。在Android的应用程序中，Context无处不在，很多接口都要求用Context对象作为参数。
 ![](./imgs/context.jpeg)
 
@@ -163,86 +163,86 @@ Activity、Service和Application这三种类型的Context都是可以通用的
   返回当前的Activity实例，如果是UI控件需要使用Activity作为Context对象，但是默认的Toast实际上使用ApplicationContext也可以。
   + getApplication()和getApplicationContext()
   它们得到的是同一个对象。getApplication()只能在Activity和Service中得到。在BroadcastReciver必须使用getApplicationContext()。
-##### 参考资料
+###### 参考资料
 + [《如何理解Context?》](https://zhuanlan.zhihu.com/p/27163977)
 
-### 第3章 Activity组件相关问题
+#### 第3章 Activity组件相关问题
 
 这一章主要讲解Activity相关的机制，包括Activity的启动流程，显示原理等相关面试问题，通过本章的学习，我们不但能熟悉它，更能深入了解它。
-#### 1 说说Activity的启动流程
-#### 2 说说Activity的显示原理
-#### 3 应用的UI线程是怎么启动的
+##### 1 说说Activity的启动流程
+##### 2 说说Activity的显示原理
+##### 3 应用的UI线程是怎么启动的
 
-### 第4章 其它应用组件相关面试问题
+#### 第4章 其它应用组件相关面试问题
 
 本章主要讲除了Activity之外的应用组件相关面试问题，包括service的启动和绑定原理，静态广播和动态广播的注册和收发原理，provider的启动和数据传输原理等等。
-#### 1 说说service的启动原理
+##### 1 说说service的启动原理
 
-#### 2 说说service的绑定原理-1
+##### 2 说说service的绑定原理-1
 
-#### 3 说说service的绑定原理-2
+##### 3 说说service的绑定原理-2
 
-#### 4 说说动态广播的注册和收发原理
+##### 4 说说动态广播的注册和收发原理
 
-#### 5 说说静态广播的注册和收发原理
+##### 5 说说静态广播的注册和收发原理
 
-#### 6 说说Provider的启动原理
+##### 6 说说Provider的启动原理
 
-### 第5章 UI体系相关问题
+#### 第5章 UI体系相关问题
 
 本章主要讲UI体系相关面试问题，包括UI刷新机制，涉及到vsync和choreographer原理。另外还会讲到surface的相关原理，涉及到应用和WMS、surfaceFlinger通信。
-#### 1 说说屏幕刷新的机制-1
+##### 1 说说屏幕刷新的机制-1
 
-#### 2 说说屏幕刷新的机制-2
+##### 2 说说屏幕刷新的机制-2
 
-#### 3 surface跨进程传递原理
+##### 3 surface跨进程传递原理
 
-#### 4 surface的绘制原理
+##### 4 surface的绘制原理
 
-#### 5 你对vsync机制有了解吗？
+##### 5 你对vsync机制有了解吗？
 
-#### 6 SurfaceView & View的区别，底层原理有何不同
+##### 6 SurfaceView & View的区别，底层原理有何不同
 
-### 第6章 进程通信相关面试问题
+#### 第6章 进程通信相关面试问题
 
 本章主要讲进程通信相关面试问题，包括binder的整体架构和通信原理，oneway机制，binder对象的传递等等。
-#### 1 Android Framework用到了哪些跨进程通信方式
+##### 1 Android Framework用到了哪些跨进程通信方式
 
-#### 2 谈谈你对Binder的理解
+##### 2 谈谈你对Binder的理解
 
 #### 3 一次完整的ipc通信流程是怎样的
 
-#### 4 binder对象跨进程传递原理是怎么样的
+##### 4 binder对象跨进程传递原理是怎么样的
 
-#### 5 说一说binder的oneway机制
+##### 5 说一说binder的oneway机制
 
-### 第7章 线程通信相关面试问题
+#### 第7章 线程通信相关面试问题
 
 本章主要讲线程通信原理相关面试问题，包括消息队列的创建，消息循环机制，消息延时，同步和异步消息，消息屏障等等内容。
-#### 1 线程的消息队列是怎么创建的？
+##### 1 线程的消息队列是怎么创建的？
 
-#### 2 说说android线程间消息传递机制
+##### 2 说说android线程间消息传递机制
 
-#### 3 handler的消息延时是怎么实现的？
+##### 3 handler的消息延时是怎么实现的？
 
-#### 4 说说idleHandler的原理
+##### 4 说说idleHandler的原理
 
-#### 5 主线程进入loop循环了为什么没有ANR？
+##### 5 主线程进入loop循环了为什么没有ANR？
 
-#### 6 听说过消息屏障么？
+##### 6 听说过消息屏障么？
 
-#### 7 多线程间通信和多进程之间通信有什么不同，分别怎么实现？
+##### 7 多线程间通信和多进程之间通信有什么不同，分别怎么实现？
 
-### 第8章 技巧，心得相关
+#### 第8章 技巧，心得相关
 
 除了上面章节之外的所有问题，都会放在本章讲到，除了原理之外，还会分享一些代码技巧。
-#### 1 怎么跨进程传递大图片
+##### 1 怎么跨进程传递大图片
 
-#### 2 说说threadLocal的原理
+##### 2 说说threadLocal的原理
 
-#### 3 来说说looper的副业
+##### 3 来说说looper的副业
 
-#### 4 怎么检查线程有耗时任务
+##### 4 怎么检查线程有耗时任务
 
-#### 5 怎么同步处理消息
-#### 6 主线程&ApplicationThread
+##### 5 怎么同步处理消息
+##### 6 主线程&ApplicationThread
