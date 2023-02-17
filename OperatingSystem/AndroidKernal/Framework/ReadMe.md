@@ -243,6 +243,5 @@ Activity、Service和Application这三种类型的Context都是可以通用的
 ##### 3 来说说looper的副业
 
 ##### 4 怎么检查线程有耗时任务
-
 ##### 5 怎么同步处理消息
 ##### 6 主线程&ApplicationThread
