@@ -127,97 +127,122 @@ Activity启动过程中，一般会牵涉到应用启动的流程。应用启动
     + mStackSupervisor#attachApplicationLocked()方法中调用 ActivityThread#ApplicationThread#scheduleLaunchActivity()方法，进而通过主线程Handler消息通知创建 Activity 对象，然后再调用 mInstrumentation#callActivityOnCreate()执行 Activity#onCreate() 生命周期
 + 布局&绘制 源码流程可以参考Android View 的绘制流程分析及其源码调用追踪
 
-+ 参考资料
+##### 参考资料
   + [《Android应用启动流程分析》](https://zhuanlan.zhihu.com/p/596546019)
   + [《Android应用进程的创建 — Activity的启动流程》](https://www.jianshu.com/p/0875116e2e54)
 
-#### 2 应用是怎么启用Binder机制的？
+#### 2 应用是怎么启用Binder机制的
 
 
 #### 3 谈谈对Application的理解
-
+Application的作用
++ 保存应用进程中的全局变量
+  Application会横跨进程的生命周期，我们可以在Application中维护一些全局变量
++ 应用初始化操作
+  Application的创建是排在四大组件的前面
++ 提供应用的上下文
+  Application可以提供一个稳定的context，而且因为Application的生命周期横跨整个应用的生命周期，所以不需要担心Application的context内存泄漏的问题
+  
 #### 4 谈谈对Context的理解
-#### 5 冷启动App
+Context的字面含义是上下文环境。应用的上层代码通过Context类提供的接口来操作Android的4大组件和资源。在Android的应用程序中，Context无处不在，很多接口都要求用Context对象作为参数。
+![](./imgs/context.jpeg)
+
++ Application的Context和Activity的Context的区别？
+Activity、Service和Application这三种类型的Context都是可以通用的
+
+
++ 如何获取Context？
+通常我们想要获取Context对象，主要有以下四种方法
+  + View.getContext
+  返回当前View对象的Context对象，通常是当前正在展示的Activity对象。
+  + Activity.getApplicationContext
+  获取当前Activity所在的(应用)进程的Context对象，通常我们使用Context对象时，要优先考虑这个全局的进程Context。
+  + ContextWrapper.getBaseContext()
+  用来获取一个ContextWrapper进行装饰之前的Context，可以使用这个方法，这个方法在实际开发中使用并不多，也不建议使用。
+  + Activity.this
+  返回当前的Activity实例，如果是UI控件需要使用Activity作为Context对象，但是默认的Toast实际上使用ApplicationContext也可以。
+  + getApplication()和getApplicationContext()
+  它们得到的是同一个对象。getApplication()只能在Activity和Service中得到。在BroadcastReciver必须使用getApplicationContext()。
+##### 参考资料
++ [《如何理解Context?》](https://zhuanlan.zhihu.com/p/27163977)
 
 ### 第3章 Activity组件相关问题
 
 这一章主要讲解Activity相关的机制，包括Activity的启动流程，显示原理等相关面试问题，通过本章的学习，我们不但能熟悉它，更能深入了解它。
-1 说说Activity的启动流程
-2 说说Activity的显示原理
-3 应用的UI线程是怎么启动的
-第4章 其它应用组件相关面试问题
+#### 1 说说Activity的启动流程
+#### 2 说说Activity的显示原理
+#### 3 应用的UI线程是怎么启动的
+
+### 第4章 其它应用组件相关面试问题
 
 本章主要讲除了Activity之外的应用组件相关面试问题，包括service的启动和绑定原理，静态广播和动态广播的注册和收发原理，provider的启动和数据传输原理等等。
-1 说说service的启动原理
+#### 1 说说service的启动原理
 
-2 说说service的绑定原理-1
+#### 2 说说service的绑定原理-1
 
-3 说说service的绑定原理-2
+#### 3 说说service的绑定原理-2
 
-4 说说动态广播的注册和收发原理
+#### 4 说说动态广播的注册和收发原理
 
-5 说说静态广播的注册和收发原理
+#### 5 说说静态广播的注册和收发原理
 
-6 说说Provider的启动原理
-第5章 UI体系相关面试问题
+#### 6 说说Provider的启动原理
+
+### 第5章 UI体系相关问题
 
 本章主要讲UI体系相关面试问题，包括UI刷新机制，涉及到vsync和choreographer原理。另外还会讲到surface的相关原理，涉及到应用和WMS、surfaceFlinger通信。
-1 说说屏幕刷新的机制-1
+#### 1 说说屏幕刷新的机制-1
 
-2 说说屏幕刷新的机制-2
+#### 2 说说屏幕刷新的机制-2
 
-3 surface跨进程传递原理
+#### 3 surface跨进程传递原理
 
-4 surface的绘制原理
+#### 4 surface的绘制原理
 
-5 你对vsync机制有了解吗？
+#### 5 你对vsync机制有了解吗？
 
-6 SurfaceView & View的区别，底层原理有何不同
-第6章 进程通信相关面试问题
+#### 6 SurfaceView & View的区别，底层原理有何不同
+
+### 第6章 进程通信相关面试问题
 
 本章主要讲进程通信相关面试问题，包括binder的整体架构和通信原理，oneway机制，binder对象的传递等等。
-1 Android Framework用到了哪些跨进程通信方式
+#### 1 Android Framework用到了哪些跨进程通信方式
 
-2 谈谈你对Binder的理解
+#### 2 谈谈你对Binder的理解
 
-3 一次完整的ipc通信流程是怎样的
+#### 3 一次完整的ipc通信流程是怎样的
 
-4 binder对象跨进程传递原理是怎么样的
+#### 4 binder对象跨进程传递原理是怎么样的
 
-5 说一说binder的oneway机制
-第7章 线程通信相关面试问题
+#### 5 说一说binder的oneway机制
+
+### 第7章 线程通信相关面试问题
 
 本章主要讲线程通信原理相关面试问题，包括消息队列的创建，消息循环机制，消息延时，同步和异步消息，消息屏障等等内容。
-1 线程的消息队列是怎么创建的？
+#### 1 线程的消息队列是怎么创建的？
 
-2 说说android线程间消息传递机制
+#### 2 说说android线程间消息传递机制
 
-3 handler的消息延时是怎么实现的？
+#### 3 handler的消息延时是怎么实现的？
 
-4 说说idleHandler的原理
+#### 4 说说idleHandler的原理
 
-5 主线程进入loop循环了为什么没有ANR？
+#### 5 主线程进入loop循环了为什么没有ANR？
 
-6 听说过消息屏障么？
+#### 6 听说过消息屏障么？
 
-7 多线程间通信和多进程之间通信有什么不同，分别怎么实现？
-第8章 技巧，心得相关
+#### 7 多线程间通信和多进程之间通信有什么不同，分别怎么实现？
+
+### 第8章 技巧，心得相关
 
 除了上面章节之外的所有问题，都会放在本章讲到，除了原理之外，还会分享一些代码技巧。
-1 怎么跨进程传递大图片
+#### 1 怎么跨进程传递大图片
 
-2 说说threadLocal的原理
+#### 2 说说threadLocal的原理
 
-3 来说说looper的副业
+#### 3 来说说looper的副业
 
-4 怎么检查线程有耗时任务
+#### 4 怎么检查线程有耗时任务
 
-5 怎么同步处理消息
-6 主线程&ApplicationThread
-第9章 综合性面试问题
-
-本章主要是讨论一些综合性较强的面试题，这类题目不会问到具体某一块原理，需要充分结合自己的思考和积累，没有唯一的答案。本章我们就来讨论这些开放的题目该怎么答，有哪些思路可以借鉴的。
-1 你去了解framework是为了解决一个什么样的问题，怎么解决的
-2 Android Framework用到了哪些设计模式
-3 Framework中有什么你觉得设计的很巧妙的地方，请举例说明-1
-4 Framework中有什么你觉得设计的很巧妙的地方，请举例说明-2
+#### 5 怎么同步处理消息
+#### 6 主线程&ApplicationThread
